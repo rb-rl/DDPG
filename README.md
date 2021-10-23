@@ -3,6 +3,24 @@ This repository contains a deep reinforcement learning agent based on a deep det
 
 The DDPG is an actor-critic based on a continuous action space and thus extends the critic-only [DDQN](https://github.com/rb-rl/DDQN) based on discrete actions.
 
+## Environment
+
+The environment is a floor in 3D-space with a robotic arm with two joints placed on it. It is based on the Unity engine and is provided by Udacity. The continuous states, continuous actions and the rewards are given as follows:
+
+**State**
+
+- 33 floating point values = position, rotation, velocity and angular velocity of robotic arm
+
+**Action**
+
+- 4 floating point values in \[-1,1\] = torque applied to the two joints of the robotic arm
+
+**Reward**
+
+- +0.1 = agent's hand is in the goal location
+
+The environment is episodic. The return per episode, which is the non-discounted cumulative reward, is referred to as a score. The environment is considered as solved if the score averaged over the 100 most recent episodes reaches +30.
+
 ## Installation
 
 In order to install the project provided in this repository on Windows 10, follow these steps:
