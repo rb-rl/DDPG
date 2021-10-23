@@ -5,7 +5,7 @@ The DDPG is an actor-critic based on a continuous action space and thus extends 
 
 ## Environment
 
-The environment is a floor in 3D-space with a robotic arm with two joints placed on it. It is based on the Unity engine and is provided by Udacity. The continuous states, continuous actions and the rewards are given as follows:
+The environment is a floor in 3D-space with a robotic arm consisting of two joints placed on it. It is based on the Unity engine and is provided by Udacity. The continuous states, continuous actions and the rewards are given as follows:
 
 **State**
 
