@@ -13,11 +13,11 @@ The environment is a floor in 3D-space with a robotic arm consisting of two join
 
 **Action**
 
-- 4 floating point values in \[-1,1\] = torque applied to the two joints of the robotic arm
+- 4 floating point values in \[-1,1\] = torque applied to joints of robotic arm
 
 **Reward**
 
-- +0.1 = robotic arm's hand is in the goal location
+- +0.1 = robotic arm's hand is in goal location
 
 The environment is episodic. The return per episode, which is the non-discounted cumulative reward, is referred to as a score. The environment is considered as solved if the score averaged over the 100 most recent episodes reaches +30.
 
