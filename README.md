@@ -31,6 +31,14 @@ cd ..\..
 git clone git@github.com:rb-rl/DDPG.git
 cd DDPG
 ```
+- Download the [Udacity Unity Reacher environment](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86_64.zip)
+- Unzip the zip file into the folder `DDPG` such that the `Reacher.exe` in the zip file has the relative path `DDPG\Reacher_Windows_x86_64\Reacher.exe`
+- Start a jupyter notebook with the following command:
+```
+jupyter notebook
+```
+- Open `Main.ipynb`
+- In the Jupyter notebook, select `Kernel -> Change Kernel -> drlnd`
 
 ## Usage
 
