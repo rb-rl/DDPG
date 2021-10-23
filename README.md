@@ -17,7 +17,7 @@ The environment is a floor in 3D-space with a robotic arm consisting of two join
 
 **Reward**
 
-- +0.1 = agent's hand is in the goal location
+- +0.1 = robotic arm's hand is in the goal location
 
 The environment is episodic. The return per episode, which is the non-discounted cumulative reward, is referred to as a score. The environment is considered as solved if the score averaged over the 100 most recent episodes reaches +30.
 
