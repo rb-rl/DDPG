@@ -21,6 +21,20 @@ The environment is a floor in 3D-space with a robotic arm consisting of two join
 
 The environment is episodic. The return per episode, which is the non-discounted cumulative reward, is referred to as a score. The environment is considered as solved if the score averaged over the 100 most recent episodes reaches +30.
 
+## Demo
+
+The repository adresses both training and inference of the agent. The training process can be observed in a Unity window, as shown in the following video.
+
+https://user-images.githubusercontent.com/92691697/138750479-e34f19d7-2697-4c2d-bd03-494e252565bc.mp4
+
+When the training is stopped, the actor and critic neural networks of the agent are stored in the files called agent_actor.pt and agent_critic.pt.
+
+The files [agent_actor.pt](agent_actor.pt) and [agent_critic.pt](agent_critic.pt) provided in this repository are the neural networks of a successfully trained agent.
+
+The application of the agent on the environment, i.e. the inference process, can also be observed in a Unity window with this repository:
+
+https://user-images.githubusercontent.com/92691697/138750782-ad46c1b2-85a5-43de-a7b9-f7b56825ed6b.mp4
+
 ## Installation
 
 In order to install the project provided in this repository on Windows 10, follow these steps:
