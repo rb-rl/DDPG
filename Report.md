@@ -34,15 +34,15 @@ The second action-value function is updated via a soft update according to
 
 ### Network topology
 
-Each of the two policies `π(s)` and `π'(s)` is represented by a fully connected neural network consisting of 2 hidden fully connected layers with 64 neurons per layer, yielding the network architecture
+Each of the two policies `π(s)` and `π'(s)` is represented by a fully connected neural network consisting of 3 hidden fully connected layers with 64 neurons per layer, yielding the network architecture
 
-`33 -> 64 -> 64 -> 4`
+`33 -> 64 -> 64 -> 64 -> 4`
 
 The numbers 33 and 4 come from the sizes of the state and action spaces, because a policy network takes a state as an input and outputs an action.
 
 For the action-value functions `Q(s,a)` and `Q'(s,a)`, the inputs are states and actions while the outputs are the scalar Q-values. As the states and actions are concatenated when entering the corresponding neural network, this yields the in- and output sizes 37 and 1. The network architectures chosen for the deep Q-networks are therefore similar to the one shown above, but now of the form
 
-`37 -> 64 -> 64 -> 1`
+`37 -> 64 -> 64 -> 64 -> 1`
 
 The hidden layers of both architectures have the `rectified linear unit` (=relu) as the activation function. The output layer of the policy networks has the `tanh` as the activation whereas the output layers of the deep Q-networks are purely linear.
 
