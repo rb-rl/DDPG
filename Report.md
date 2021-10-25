@@ -10,7 +10,7 @@ The reinforcement learning agent used in this project is based on a deep determi
 
 In this approach, two policies `π(s)` and `π'(s)` as well as two action-value functions `Q(s,a)` and `Q'(s,a)` are used, where `s` is the state and `a` the action. Each of these four functions is approximated by a neural network as described further below. The first of the two policies is updated by backpropagation based on the loss
 
-`L\_actor = - Q(s,π(s))/N`
+`L_actor = - Q(s,π(s))`
 
 where `N` is short hand for the `batch size`.
 
@@ -22,11 +22,11 @@ with the soft update rate `τ`. Note that this update is not performed every fra
 
 ### Critic Updates
 
-The first of the two action-value functions is updated according to the rule
+The first of the two action-value functions is updated by backpropagation with the loss
 
-`Q(s,a) <- (1 - α) * Q(s,a) + α * (r + γ * max_a'Q'(s', π'(s')))` (1)
+`L_critic = (r + γ * max_a'Q'(s',a') - Q(s,a))^2` (1)
 
-where `α` is the learning rate, `r` the reward when going from state `s` to `s'` and `γ` is the discount factor. More on the details of this update will be shown further below.
+where `α` is the learning rate, `r` the reward when going from state `s` to `s'` and `γ` is the discount factor.
 
 The second action-value function is updated via a soft update according to
 
