@@ -10,7 +10,7 @@ The reinforcement learning agent used in this project is based on a deep determi
 
 In this approach, two policies `π(s)` and `π'(s)` as well as two action-value functions `Q(s,a)` and `Q'(s,a)` are used, where `s` is the state and `a` the action. Each of these four functions is approximated by a neural network as described further below. The first of the two policies is updated by backpropagation based on the loss
 
-`L\_actor = - Q(s,π(s))/N
+`L\_actor = - Q(s,π(s))/N`
 
 where `N` is short hand for the `batch size`.
 
