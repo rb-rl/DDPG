@@ -33,7 +33,7 @@ The files [agent_actor.pt](agent_actor.pt) and [agent_critic.pt](agent_critic.pt
 
 The application of the agent on the environment, i.e. the inference process, can also be observed in a Unity window with this repository:
 
-https://user-images.githubusercontent.com/92691697/138750782-ad46c1b2-85a5-43de-a7b9-f7b56825ed6b.mp4
+https://user-images.githubusercontent.com/92691697/138762044-c914e2e5-8d15-4026-b3b0-0813b35f2b4e.mp4
 
 ## Installation
 
