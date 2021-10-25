@@ -4,7 +4,7 @@ This report contains technical details on the approach used in this project.
 
 ## Implementation
 
-The reinforcement learning agent used in this project is based on a deep deterministic policy gradient. 
+The reinforcement learning agent used in this project is based on a deep deterministic policy gradient [1]. 
 
 ### Actor Updates
 
@@ -49,3 +49,20 @@ The hidden layers of all architectures have the `rectified linear unit` (=relu) 
 ### Backpropagation
 
 Backpropagation of the neural networks behind the policy `π(s)` and action-value function `Q(s,a)` is done with mini-batch gradient descent based on the the learning rate `α=0.001` and `batch size=64`. The optimizer used for that purpose is an Adam optimizer.
+
+### Policy
+
+The policy is based on using the policy network `π(s)` in combination with a noise `N`:
+
+`a = π(s) + N`
+
+The noise is given by an Ornstein-Uhlenbeck process [2], i.e. it is updated according to
+
+`N <- (1 - θ) * N + ε * W`
+
+where `W` stands for the Wiener process and are just normally distributed numbers. The constant `θ` is the decay rate of the noise and `ε` is the standard deviation of the newly added noise. In the code, the value of `ε` could basically be decayed as in epsilon decay of [DDQN](https://github.com/rb-rl/DDQN/blob/main/Report.md). However, hyperparameter optimization led to a fixation to a constant value.
+
+### References
+
+[1] Continuous control with deep reinforcement learning, 2015, [arxiv.org/pdf/1509.02971.pdf](https://arxiv.org/pdf/1509.02971.pdf)
+[2] [https://en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process](en.wikipedia.org/wiki/Ornstein–Uhlenbeck_process)
