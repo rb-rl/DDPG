@@ -20,7 +20,7 @@ with the soft update rate `τ`. Note that this update is not performed every fra
 
 ### Critic Updates
 
-The first of the two action-value functions is updated by backpropagation with the loss
+The first of the two action-value functions `Q(s,a)` and `Q'(s,a)` is updated by backpropagation with the loss
 
 `L_critic = (r + γ * max_a'Q'(s',a') - Q(s,a))^2` (1)
 
