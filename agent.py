@@ -70,7 +70,7 @@ LOSS = "mse_loss"
 # The soft update rate of target deep Q-network.
 TAU = 0.001
 
-# The number of frames per update of the target deep Q-network
+# The number of frames per update of the target deep Q-network.
 FRAMES_PER_UPDATE = 4
 
 
