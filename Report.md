@@ -12,8 +12,6 @@ In this approach, two policies `π(s)` and `π'(s)` as well as two action-value 
 
 `L_actor = - Q(s,π(s))`
 
-where `N` is short hand for the `batch size`.
-
 The second policy is updated via a soft update according to
 
 `π'(s) <- (1 - τ) * π'(s) + τ * π(s)`
