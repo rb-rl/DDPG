@@ -34,7 +34,7 @@ The second action-value function is updated via a soft update according to
 
 ### Network topology
 
-Each of the two policies `$\pi$(s)` and `$\pi$'(s)` is represented by a neural network consisting of 3 hidden layers with 64 neurons per layer, yielding the network architecture
+Each of the two policies `$\pi$(s)` and `$\pi$'(s)` is represented by a fully connected neural network consisting of 3 hidden fully connected layers with 64 neurons per layer, yielding the network architecture
 
 `33 -> 64 -> 64 -> 64 -> 4`
 
