@@ -64,5 +64,5 @@ where `W` stands for the Wiener process and are just normally distributed number
 
 ### References
 
-[1] Continuous control with deep reinforcement learning, 2015, [arxiv.org/pdf/1509.02971.pdf](https://arxiv.org/pdf/1509.02971.pdf)
+[1] Continuous control with deep reinforcement learning, 2015, [arxiv.org/pdf/1509.02971.pdf](https://arxiv.org/pdf/1509.02971.pdf)  
 [2] [https://en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process](en.wikipedia.org/wiki/Ornstein–Uhlenbeck_process)
