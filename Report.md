@@ -22,9 +22,9 @@ with the soft update rate `τ`. Note that this update is not performed every fra
 
 The first of the two action-value functions `Q(s,a)` and `Q'(s,a)` is updated by backpropagation with the loss
 
-`L_critic = (r + γ * max_a'Q'(s',a') - Q(s,a))^2` (1)
+`L_critic = (r + γ * max_a'Q'(s',a') - Q(s,a))^2`
 
-where `α` is the learning rate, `r` the reward when going from state `s` to `s'` and `γ` is the discount factor.
+averaged over the batch, where `α` is the learning rate, `r` the reward when going from state `s` to `s'` and `γ` is the discount factor.
 
 The second action-value function is updated via a soft update according to
 
