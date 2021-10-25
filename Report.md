@@ -68,7 +68,7 @@ Also, a replay memory is used, which can store 10000 elements, where the oldest 
 
 ## Solution
 
-As explained in the [README.md](README.md), the environment is considered as solved, if the average score over 100 consecutive episodes is at least +30. A solution of the environment was achieved in 233 episodes, as shown by the following screenshot from the Jupyter notebook:
+As explained in the [README.md](README.md), the environment is considered as solved, if the average score over 100 consecutive episodes is at least +30. A solution of the environment was achieved in 233 episodes, as shown by the following screenshot from the [Jupyter notebook](Main.ipynb):
 
 ![Episodes_Number](https://user-images.githubusercontent.com/92691697/138770701-000188c1-1ca3-4708-9038-00e1b28b76f4.PNG)
 
