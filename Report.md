@@ -8,13 +8,13 @@ The reinforcement learning agent used in this project is based on a deep determi
 
 ### Actor Updates
 
-In this approach, two policies `π(s)` and `π'(s)` as well as two action-value functions `Q(s,a)` and `Q'(s,a)` are used, where `s` is the state and `a` the action. Each of these four functions is approximated by a neural network as described further below. The first of the two policies is updated by backpropagation based on the loss
+In this approach, two policies `π(s)` and `π'(s)` as well as two action-value functions `Q(s,a)` and `Q'(s,a)` are used, where `s` is the state and `a` the action. Each of these four functions is approximated by its own neural network as described further below. The first of the two policies is updated by backpropagation based on the loss
 
 `L_actor = - Q(s,π(s))`
 
 averaged over a mini-batch. The second policy is updated via a soft update according to
 
-`π'(s) <- (1 - τ) * π'(s) + τ * π(s)`
+`π'(s) <- (1 - τ) * π'(s) + τ * π(s)` (1)
 
 with the soft update rate `τ`. Note that this update is not performed every frame but only every `frames per update` frame.
 
@@ -24,26 +24,28 @@ The first of the two action-value functions `Q(s,a)` and `Q'(s,a)` is updated by
 
 `L_critic = (r + γ * max_a'Q'(s',a') - Q(s,a))^2`
 
-averaged over a mini-batch, where `α` is the learning rate, `r` the reward when going from state `s` to `s'` and `γ` the discount factor.
+averaged over also a mini-batch, where `r` is the reward when going from the current state `s` to the next state `s'` and `γ` is the discount factor.
 
 The second action-value function is updated via a soft update according to
 
 `Q'(s,a) <- (1 - τ) * Q'(s,a) + τ * Q(s,a)`
 
+similar to the replacement rule (1) and with the same frequency.
+
 ### Network topology
 
-Each of the two policies `π(s)` and `π'(s)` is represented by a fully connected neural network consisting of 2 hidden fully connected layers with 64 neurons per layer, yielding the network architecture
+Each of the two policies `π(s)` and `π'(s)` is represented by a fully connected neural network consisting of 2 hidden layers with 64 neurons per layer, yielding the network architecture
 
-`33 -> 64 -> 64 -> -> 4`
+`33 -> 64 -> 64 -> 4`
 
 The numbers 33 and 4 come from the sizes of the state and action spaces, because a policy network takes a state as an input and outputs an action.
 
-For the action-value functions `Q(s,a)` and `Q'(s,a)`, the inputs are states and actions while the outputs are the scalar Q-values. As the states and actions are concatenated when entering the corresponding neural network, this yields the in- and output sizes 37 and 1. The network architectures chosen for the deep Q-networks are therefore similar to the one shown above, but now of the form
+For the action-value functions `Q(s,a)` and `Q'(s,a)`, the inputs are states and actions while the outputs are the scalar Q-values. As the states and actions are concatenated when entering the corresponding neural network, this yields the in- and output sizes 37 and 1. The fully connected network architectures chosen for the deep Q-networks are therefore similar to the one shown above, but now of the form
 
-`37 -> 64 -> 64 -> -> 1`
+`37 -> 64 -> 64 -> 1`
 
-The hidden layers of both architectures have the `rectified linear unit` (=relu) as the activation function. The output layer of the policy networks has the `tanh` as the activation whereas the output layers of the deep Q-networks are purely linear.
+The hidden layers of all architectures have the `rectified linear unit` (=relu) as the activation function. The output layers of the policy networks have a `tanh` activation function whereas the output layers of the deep Q-networks are purely linear.
 
 ### Backpropagation
 
-Backpropagation of all four neural networks is done with mini-batch gradient descent based on the `batch size=64`. The loss function is the mean square error loss and the optimizer the an Adam optimizer.
+Backpropagation of the neural networks behind the policy `π(s)` and action-value function `Q(s,a)` is done with mini-batch gradient descent based on the the learning rate `α=0.001` and `batch size=64`. The optimizer used for that purpose is an Adam optimizer.
