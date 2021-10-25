@@ -167,7 +167,7 @@ class Agent:
         batch_size = min(BATCH_SIZE, len(self.__replay_memory))
         experiences = self.__replay_memory.extract_random_experiences(batch_size)
 
-        loss_policy_network = self.__update_policy_network(experiences)
+        loss_policy_network = self.__update_policy_network(experiences[0])
         loss_q_network = self.__update_q_networks(experiences)
 
         losses = (loss_policy_network, loss_q_network)
@@ -235,7 +235,7 @@ class Agent:
         """
         self.__noise = (1 - THETA) * self.__noise + self.__epsilon * np.random.randn(self.__number_motors)
 
-    def __update_policy_network(self, experiences: Tuple[Tensor, Tensor, Tensor, Tensor, Tensor]) -> float:
+    def __update_policy_network(self, states: Tensor) -> float:
         """
         Update the policy network.
 
@@ -246,13 +246,11 @@ class Agent:
         [1] Continuous control with deep reinforcement learning, 2015, arxiv.org/pdf/1509.02971.pdf
 
         Args:
-            experiences: The experiences used for the update.
+            states: The states used for the update.
 
         Returns:
             The loss.
         """
-        states, _, _, _, _ = experiences
-
         # pi(s)
         self.__policy_network.train()
         actions = self.__policy_network(states)
