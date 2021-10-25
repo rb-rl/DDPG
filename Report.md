@@ -62,6 +62,10 @@ The noise is given by an Ornstein-Uhlenbeck process [2], i.e. it is updated acco
 
 where `W` stands for the Wiener process and is a 4-vector for each update step distributed according to a multivariate Gaussian. The constant `θ` is the decay rate of the noise and `ε` is the standard deviation of the newly added noise. In the code, the value of `ε` could basically be decayed as in epsilon decay of [DDQN](https://github.com/rb-rl/DDQN/blob/main/Report.md). However, hyperparameter optimization led to a fixation to a constant value.
 
+### Replay memory
+
+Also, a replay memory is used, which can store 10000 elements, where the oldest elements are discared if the limit of the memory is reached.
+
 ### References
 
 [1] Continuous control with deep reinforcement learning, 2015, [arxiv.org/pdf/1509.02971.pdf](https://arxiv.org/pdf/1509.02971.pdf)  
