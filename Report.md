@@ -60,7 +60,7 @@ The noise is given by an Ornstein-Uhlenbeck process [2], i.e. it is updated acco
 
 `N <- (1 - θ) * N + ε * W`
 
-where `W` stands for the Wiener process and is a vector distributed according to a multivariate Gaussian. The constant `θ` is the decay rate of the noise and `ε` is the standard deviation of the newly added noise. In the code, the value of `ε` could basically be decayed as in epsilon decay of [DDQN](https://github.com/rb-rl/DDQN/blob/main/Report.md). However, hyperparameter optimization led to a fixation to a constant value.
+where `W` stands for the Wiener process and is a vector for each update step distributed according to a multivariate Gaussian. The constant `θ` is the decay rate of the noise and `ε` is the standard deviation of the newly added noise. In the code, the value of `ε` could basically be decayed as in epsilon decay of [DDQN](https://github.com/rb-rl/DDQN/blob/main/Report.md). However, hyperparameter optimization led to a fixation to a constant value.
 
 ### References
 
