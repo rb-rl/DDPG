@@ -16,21 +16,21 @@ where `N` is short hand for the `batch size`.
 
 The second policy is updated via a soft update according to
 
-`π'(s) <- (1 - tau) * π'(s) + tau * π(s)`
+`π'(s) <- (1 - τ) * π'(s) + τ * π(s)`
 
-with the soft update rate `tau`. Note that this update is not performed every frame but only every `frames per update` frame.
+with the soft update rate `τ`. Note that this update is not performed every frame but only every `frames per update` frame.
 
 ### Critic Updates
 
 The first of the two action-value functions is updated according to the rule
 
-`Q(s,a) <- (1 - alpha) * Q(s,a) + alpha * (r + gamma * max_a'Q'(s', π'(s')))` (1)
+`Q(s,a) <- (1 - α) * Q(s,a) + α * (r + γ * max_a'Q'(s', π'(s')))` (1)
 
-where `alpha` is the learning rate, `r` the reward when going from state `s` to `s'` and `gamma` is the discount factor. More on the details of this update will be shown further below.
+where `α` is the learning rate, `r` the reward when going from state `s` to `s'` and `γ` is the discount factor. More on the details of this update will be shown further below.
 
 The second action-value function is updated via a soft update according to
 
-`Q'(s,a) <- (1 - tau) * Q'(s,a) + tau * Q(s,a)`
+`Q'(s,a) <- (1 - τ) * Q'(s,a) + τ * Q(s,a)`
 
 ### Network topology
 
