@@ -20,13 +20,13 @@ from typing import Tuple
 ACTIVATION_FUNCTION = "relu"
 
 # The number of hidden layers of the actor network.
-ACTOR_NUMBER_HIDDEN_LAYERS = 3
+ACTOR_NUMBER_HIDDEN_LAYERS = 2
 
 # The number of hidden neurons per layer of the actor network.
 ACTOR_NUMBER_HIDDEN_NEURONS_PER_LAYER = 64
 
 # The number of hidden layers of the critic network.
-CRITIC_NUMBER_HIDDEN_LAYERS = 3
+CRITIC_NUMBER_HIDDEN_LAYERS = 2
 
 # The number of hidden neurons per layer of the critic network.
 CRITIC_NUMBER_HIDDEN_NEURONS_PER_LAYER = 64

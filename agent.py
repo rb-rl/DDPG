@@ -291,11 +291,11 @@ class Agent:
         self.__policy_network_target.eval()
         next_actions = self.__policy_network_target(next_states).detach()
 
-        # Q'(s',pi(s'))
+        # Q'(s',pi'(s'))
         self.__q_network_target.eval()
         target_q_values = self.__q_network_target(next_states, next_actions).detach()
 
-        # r'+gamma*max_a' Q'(s',pi(s'))
+        # r'+gamma*max_a' Q'(s',pi'(s'))
         targets = (adjusted_rewards + (GAMMA * target_q_values * (1 - adjusted_dones))).detach()
 
         # Q(s,a)
