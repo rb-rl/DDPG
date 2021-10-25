@@ -12,7 +12,7 @@ In this approach, two policies `π(s)` and `π'(s)` as well as two action-value 
 
 `L_actor = - Q(s,π(s))`
 
-The second policy is updated via a soft update according to
+averaged over the batch. The second policy is updated via a soft update according to
 
 `π'(s) <- (1 - τ) * π'(s) + τ * π(s)`
 
