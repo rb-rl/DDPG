@@ -66,6 +66,16 @@ where `W` stands for the Wiener process and is a 4-vector for each update step d
 
 Also, a replay memory is used, which can store 10000 elements, where the oldest elements are discared if the limit of the memory is reached.
 
+## Solution
+
+As explained in the [README.md](README.md), the environment is considered as solved, if the average score over 100 consecutive episodes is at least +30. A solution of the environment was achieved in 233 episodes, as shown by the following screenshot from the Jupyter notebook:
+
+![Episodes_Number](https://user-images.githubusercontent.com/92691697/138770701-000188c1-1ca3-4708-9038-00e1b28b76f4.PNG)
+
+The score, i.e. non-discounted cumulative reward, per episode over the training process is shown in the following screenshot:
+
+![Score](https://user-images.githubusercontent.com/92691697/138770817-398d1dc2-780b-47c0-bcd2-9e82944c54e7.PNG)
+
 ## Ideas for improvements
 
 Although the environment has been solved by the present approach, there are several possible ways to make improvements. Such improvements will impact in how many episodes the average score of +30 mentioned above is reached. And they will also affect the maximum average score reachable if the training would continue indefinitely.
