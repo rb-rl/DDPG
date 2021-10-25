@@ -97,7 +97,7 @@ A summary of the hyperparameters used to solve the environment is given in the f
 - `ε decay factor = The epsilon decay factor in [0, 1], where higher values mean a slower decay`
 - `batch size = The mini-batch size, i.e. the number of samples simultaneously used in backpropagation`
 - `loss = The loss function to be optimized in gradient descent`
-- `τ = The soft-update rate, where higher values mean that the target networks becomes equal to the normal networks faster`
+- `τ = The soft-update rate in [0, 1], where higher values mean that the target networks becomes equal to the normal networks faster`
 - `frames per update = The number of frames which have to pass for a soft-update step of the target networks`
 - `θ = The decay rate of the Ornstein-Uhlenbeck noise in [0, 1], where higher values mean a faster decay`
 
