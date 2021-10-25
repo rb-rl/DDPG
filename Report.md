@@ -66,7 +66,21 @@ where `W` stands for the Wiener process and is a 4-vector for each update step d
 
 Also, a replay memory is used, which can store 10000 elements, where the oldest elements are discared if the limit of the memory is reached.
 
+## Ideas for improvements
+
+Although the environment has been solved by the present approach, there are several possible ways to make improvements. Such improvements will impact in how many episodes the average score of +30 mentioned above is reached. And they will also affect the maximum average score reachable if the training would continue indefinitely.
+
+The suggested improvements are the following ones:
+- Continued manual adjustment of the hyperparameters: A certain amount of manual hyperparameter tuning (including network topology) was invested in this project. However, the upper limit has not yet been reached here. Unfortunetly, the tweaking of the hyperparameters becomes the more time intensive, the more fine-tuned they are.
+- Auto machine learning: The hyperparameters can also be tuned automatically by performing a grid search or even better a random search.
+- Extension of state space by past: By using time delay neural networks or recurrent layers, the state space could be extended by the past states.
+- Prioritized replay memory: The replay memory used in this project is not prioritized such that there is an improvement option.
+- Distributed Distributional DDPG (=D4PG) [3]: In DDPG, every state, action pair (s,a) has only a single scalar value Q. Distributional approaches extend this by providing a distribution over multiple Q-values.
+- Twin Delayed Deep Deterministic (=TD3) [3]: DDPG can be extended by using the two action-value functions in a different way, having the policy network being soft-updated at a lower rate than the deep Q-network and by introducing an extra noise in the loss of the critic.
+- Attention: Primarily used in natural language processing, attention layers could also be explored in this context of this project.
+
 ### References
 
 [1] Continuous control with deep reinforcement learning, 2015, [arxiv.org/pdf/1509.02971.pdf](https://arxiv.org/pdf/1509.02971.pdf)  
-[2] [en.wikipedia.org/wiki/Ornstein–Uhlenbeck_process](https://en.wikipedia.org/wiki/Ornstein–Uhlenbeck_process)
+[2] [en.wikipedia.org/wiki/Ornstein–Uhlenbeck_process](https://en.wikipedia.org/wiki/Ornstein–Uhlenbeck_process)  
+[3] [lilianweng.github.io/lil-log/2018/04/08/policy-gradient-algorithms.html](https://lilianweng.github.io/lil-log/2018/04/08/policy-gradient-algorithms.html)
