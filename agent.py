@@ -76,7 +76,7 @@ FRAMES_PER_UPDATE = 4
 
 class Agent:
     """
-    An agent based on double deep Q-learning, inspired by [1].
+    An agent based on deep deterministic gradient descent.
     """
 
     def __init__(self, number_sensors: int, number_motors: int):
