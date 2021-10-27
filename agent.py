@@ -295,7 +295,7 @@ class Agent:
         self.__q_network_target.eval()
         target_q_values = self.__q_network_target(next_states, next_actions).detach()
 
-        # r'+gamma*max_a' Q'(s',pi'(s'))
+        # r'+gamma*Q'(s',pi'(s'))
         targets = (adjusted_rewards + (GAMMA * target_q_values * (1 - adjusted_dones))).detach()
 
         # Q(s,a)
