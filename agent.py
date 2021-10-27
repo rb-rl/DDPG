@@ -168,7 +168,7 @@ class Agent:
         experiences = self.__replay_memory.extract_random_experiences(batch_size)
 
         loss_policy_network = self.__update_policy_network(experiences[0])
-        loss_q_network = self.__update_q_networks(experiences)
+        loss_q_network = self.__update_q_network(experiences)
 
         losses = (loss_policy_network, loss_q_network)
 
@@ -268,11 +268,11 @@ class Agent:
 
         return float(loss.cpu().data.numpy())
 
-    def __update_q_networks(self, experiences: Tuple[Tensor, Tensor, Tensor, Tensor, Tensor]) -> float:
+    def __update_q_network(self, experiences: Tuple[Tensor, Tensor, Tensor, Tensor, Tensor]) -> float:
         """
         Update the deep Q-network.
 
-        See Algorithm 1 on page 5 of [1]: L = LOSS(r' + gamma * max_a' Q'(s',pi(s')) - Q(s,a))
+        See Algorithm 1 on page 5 of [1]: L = LOSS(r' + gamma * Q'(s',pi(s')) - Q(s,a))
 
         [1] Continuous control with deep reinforcement learning, 2015, arxiv.org/pdf/1509.02971.pdf
 
