@@ -154,7 +154,7 @@ class Agent:
 
         Args:
             state: The current state.
-            action: The action taken in the current state, where is component is in [-1, 1].
+            action: The action taken in the current state, where every component is in [-1, 1].
             reward: The reward obtained by going from the current to the next state.
             next_state: The next state.
             done: Is the episode done?
