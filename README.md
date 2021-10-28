@@ -39,7 +39,8 @@ https://user-images.githubusercontent.com/92691697/138762044-c914e2e5-8d15-4026-
 
 In order to install the project provided in this repository on Windows 10, follow these steps:
 
-- Install a 64-bit version of [Anaconda](https://anaconda.cloud/installers)
+- For Windows users: If you do not know whether you have a 64-bit operating system, you can use this [help](https://support.microsoft.com/en-us/help/827218/how-to-determine-whether-a-computer-is-running-a-32-bit-version-or-64)
+- Install [Anaconda](https://anaconda.cloud/installers)
 - Open the Anaconda prompt and execute the following commands:
 ```
 conda create --name drlnd python=3.6
@@ -63,7 +64,6 @@ cd ..\..
 git clone git@github.com:rb-rl/DDPG.git
 cd DDPG
 ```
-- For Windows users: If you do not know whether you have a 64-bit operating system, you can use this [help](https://support.microsoft.com/en-us/help/827218/how-to-determine-whether-a-computer-is-running-a-32-bit-version-or-64)
 - Download the Udacity Unity Reacher environment matching your environment:
   - [Linux](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Linux.zip)
   - [Mac OSX](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher.app.zip)
